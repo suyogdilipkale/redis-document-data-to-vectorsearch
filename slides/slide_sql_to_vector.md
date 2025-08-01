@@ -34,16 +34,27 @@
   - user_id, stock, quantity, gain/loss
 - **Transactions** table
   - user_id, txn_id, type, amount, timestamp
+    
 +-------------+             +----------------+           +------------------+
+
 |     Users    | 1        N |   Portfolio    | 1       N |   Transactions   | 
+
 +-------------+             +----------------+           +------------------+ 
+
 | user_id (PK) |<-------    | portfolio_id(PK)|<------   | txn_id (PK)      | 
+
 | name         |            | user_id (FK)    |          | portfolio_id (FK)| 
+
 | email        |            | stock_symbol    |          | txn_type         | 
+
 | phone        |            | shares          |          | quantity         | 
+
 | created_at   |            | avg_price.      |          | price            | 
+
 +-------------+             | gain_loss.      |          | txn_timestamp    | 
-                            +----------------+           +------------------+
+
+						 +----------------+           +------------------+
+
 ---
 
 # Slide 5: Challenges in SQL Model at Scale
